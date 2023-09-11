@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/style.css') }}">
+    <title>Suma</title>
+</head>
+<body>
+    <div class="titulo-container">
+        <p class="titulo-calculadora">CALCULADORA</p>
+        <div class="container">
+            <div class="container-dos">
+
+            <h3 class="titulo-oper">SUMA:</h3>
+            <form action="/" method="POST">
+                <input type="number" name="sumador1" placeholder="Ingrese un numero" required>
+                <input type="number" name="sumador2" placeholder="Ingrese un numero" required>
+                <button type="submit" class="boton">SUMAR</button>
+            </form>
+            
+            {% if resultado %}
+            <p class="result">El resultado de la suma es: <b style="color: rgb(101, 114, 203); font-size: 18px">{{ resultado }}</b></p>
+            {% endif %}
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="container-dos">
+
+            <h3 class="titulo-oper">RESTA:</h3>
+            <form action="/resta" method="POST">
+                <input type="number" name="resta1" placeholder="Ingrese un numero" required>
+                <input type="number" name="resta2" placeholder="Ingrese un numero" required>
+                <button type="submit" class="boton">RESTAR</button>
+            </form>
+            
+            {% if resultado_resta %}
+            <p class="result">El resultado de la resta es: <b style="color: rgb(101, 114, 203); font-size: 18px">{{ resultado_resta }}</b></p>
+            {% endif %}
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="container-dos">
+
+            <h3 class="titulo-oper">MULTIPLICAR:</h3>
+            <form action="/multiplicar" method="POST">
+                <input type="number" name="multi1" placeholder="Ingrese un numero" required>
+                <input type="number" name="multi2" placeholder="Ingrese un numero" required>
+                <button type="submit" class="boton" style="font-size: 8px; height: 20px">MULTIPLICAR</button>
+            </form>
+            
+            {% if resultado_multiplicar %}
+            <p class="result">El resultado de la multiplicacion es: <b style="color: rgb(101, 114, 203); font-size: 18px">{{ resultado_multiplicar }}</b></p>
+            {% endif %}
+
+            </div>
+        </div>
+
+        <div class="container">
+            
+            <div class="container-dos" style= "width: 410px">
+
+            <h3 class="titulo-oper">DIVIDIR:</h3>
+            <form action="/dividir" method="POST">
+                <input type="number" name="div1" placeholder="Ingrese un numero" required>
+                <input type="number" name="div2" placeholder="Ingrese un numero" required>
+                <button type="submit" class="boton" style="font-size: 8px; height: 20px">DIVIDIR</button>
+            </form>
+            
+            {% if resultado_division %}
+            <p class="result">El resultado de la division es: <b style="color: rgb(101, 114, 203); font-size: 18px">{{ resultado_division }}</b></p>
+            {% endif %}
+
+            {% if mensaje_error is not none and mensaje_error != "" %}
+                <p style="color: red;">{{ mensaje_error }}</p>
+            {% endif %}    
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

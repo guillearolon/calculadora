@@ -1,0 +1,98 @@
+/* Define variables CSS para colores y fuentes */
+:root {
+    --main-bg-color: #979696;
+    --secondary-bg-color: #9e9d9d;
+    --main-text-color: #000;
+    --accent-color: #2b83cb;
+  }
+  
+/* Estilos para el contenedor principal */
+.container-dos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right top, var(--main-bg-color), var(--secondary-bg-color));
+    border-radius: 10px;
+    border: 1px solid #000;
+    padding: 15px;
+    width: auto; /* Cambia a 'auto' para ajustarse automáticamente al contenido */
+    max-width: 100%; /* Agrega esto para asegurarte de que no se desborde en pantallas pequeñas */
+  }
+  
+  
+  /* Estilos para el contenido dentro del contenedor */
+  .container {
+    width: max-content;
+    margin: auto;
+    text-align: center;
+  }
+  
+  /* Estilos para el título del contenedor */
+  .titulo-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(170, 209, 248);
+    width: auto;
+    height: auto;
+    margin: auto;
+    border: 2px solid rgb(173, 173, 173);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  /* Estilos para el texto del título */
+  .titulo-oper {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+  }
+  
+  /* Estilos para los resultados */
+  .result {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: var(--main-text-color);
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  /* Estilos para los botones */
+  .boton {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 1px solid #000;
+  }
+  
+  /* Estilos para el botón al pasar el mouse */
+  .boton:hover {
+    color: var(--accent-color);
+    font-size: 14px;
+  }
+  
+  /* Estilos para el título de la calculadora con animación */
+  .titulo-calculadora {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    font-weight: 1000;
+    animation-name: parrafo;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+  }
+  
+  /* Animación del título */
+  @keyframes parrafo {
+    10% {
+      transform: translateX(-5px);
+      color: var(--accent-color);
+    }
+    0% {
+      transform: translateX(0);
+      color: var(--accent-color);
+    }
+    20% {
+      transform: translateX(5px);
+      color: var(--accent-color);
+    }
+  }
+  
